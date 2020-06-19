@@ -1,5 +1,7 @@
-﻿using System;
+﻿using BigSchool_PHN.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -8,9 +10,18 @@ namespace BigSchool_PHN.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContex _dbContext;
+        public HomeController()
+        {
+            _dbContext = new ApplicationDbContex();
+        }
         public ActionResult Index()
         {
-            return View();
+            var upcomingCourses = _dbContext.Courses
+                .Include (c => c.Lecturer)
+                .Include(c => c.Category)
+                .Where(c => c.DateTime > DateTime.Now);
+            return View(upcomingCourses);
         }
 
         public ActionResult About()

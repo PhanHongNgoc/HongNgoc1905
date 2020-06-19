@@ -255,6 +255,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AttendancesController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -270,9 +271,18 @@
     <Compile Include="Migrations\202006050913365_CreateTableCourse.Designer.cs">
       <DependentUpon>202006050913365_CreateTableCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006190628271_PopulateCategoryTable.cs" />
+    <Compile Include="Migrations\202006190628271_PopulateCategoryTable.Designer.cs">
+      <DependentUpon>202006190628271_PopulateCategoryTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006190733225_AddNameColumnToApplicationUser.cs" />
+    <Compile Include="Migrations\202006190733225_AddNameColumnToApplicationUser.Designer.cs">
+      <DependentUpon>202006190733225_AddNameColumnToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContex.cs" />
+    <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -281,6 +291,9 @@
     <Compile Include="SharePointContext.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TokenHelper.cs" />
+    <Compile Include="ViewModels\CourseViewModel.cs" />
+    <Compile Include="ViewModels\FutureDate.cs" />
+    <Compile Include="ViewModels\ValidTime.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -343,6 +356,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Attendances\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -358,6 +372,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006050913365_CreateTableCourse.resx">
       <DependentUpon>202006050913365_CreateTableCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006190628271_PopulateCategoryTable.resx">
+      <DependentUpon>202006190628271_PopulateCategoryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006190733225_AddNameColumnToApplicationUser.resx">
+      <DependentUpon>202006190733225_AddNameColumnToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
